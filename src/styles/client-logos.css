@@ -1,0 +1,30 @@
+/* Source timing: reserve-clone/app/globals.css, adapted to the Figma grid. */
+.client-logos > .client-logo { min-width: 0; }
+.client-logo-viewport {
+  width: 100%;
+  height: 70px;
+  overflow: hidden;
+  contain: paint;
+}
+.client-logo-track { width: 100%; height: 210px; }
+.client-logo-frame {
+  display: flex;
+  width: 100%;
+  height: 70px;
+  align-items: center;
+  justify-content: center;
+}
+.client-logo-art {
+  display: block;
+  max-width: 65%;
+  background: #6f7988;
+  -webkit-mask: var(--logo-art) center / contain no-repeat;
+  mask: var(--logo-art) center / contain no-repeat;
+}
+@media (max-width: 800px) {
+  .client-logo-art { max-width: 67%; transform: scale(.9); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .client-logo-track { transform: none; }
+  .client-logo-frame { opacity: 1; }
+}

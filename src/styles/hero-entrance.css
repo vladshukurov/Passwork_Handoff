@@ -1,0 +1,2 @@
+.hero-title-line{display:block}
+@media(max-width:480px){.hero-title-line{display:inline}}
