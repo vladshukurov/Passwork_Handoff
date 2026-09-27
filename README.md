@@ -47,12 +47,13 @@ docs/                 дизайн-система и правила движен
 из геометрии [illustration editor](..local-editor) — локального редактора
 (`local-editor`, пакет `illustration-editor`).
 
-- Сцены описаны кодом в `scripts/export-illustrations.ts`: общий постамент 300×300, сетка 10,
-  толщина плит 14, фиксированный масштаб — чтобы серия выглядела единой.
+- Сцены описаны кодом в `scripts/export-illustrations.ts`: чистая линия без постамента, сетка 10,
+  толщина плит 14. Масштаб каждой сцены подбирается так, чтобы площадь силуэта была
+  одинаковой — лёгкие сцены не выглядят мельче плотных.
 - Экспорт: `"<studio>/node_modules/.bin/tsx" scripts/export-illustrations.ts "<studio>"`.
   Пишет `src/art/illustrations/*.svg` (каждая грань помечена `data-face`) и `*.scene.json`,
   которые можно открыть в редакторе Studio.
-- Цвета граней задаёт CSS (`src/styles/illustration-art.css`), позы hover — `src/motion/illustration-motion.js`.
+- Цвета задаёт CSS (`src/styles/illustration-art.css`): в покое грани цвета фона и серая линия, при hover — синие тона. Позы hover — `src/motion/illustration-motion.js`; ящик сейфа меняет форму через `data-open`.
   `npm test` проверяет, что все анимируемые объекты есть в SVG.
 
 ## Деплой
