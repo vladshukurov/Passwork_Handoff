@@ -1,6 +1,6 @@
-// Isometric artwork motion. Poses are written in scene space (x, y, z) and
-// projected with the same 30° isometry as illustration editor, so every piece
-// travels along a real axis of the drawing.
+// Isometric illustration motion. Poses are written in scene space (x, y, z)
+// and projected with the same 30° isometry the SVGs are drawn in, so every
+// piece travels along a real axis of the drawing.
 import {siteMotion} from './site-motion-tokens.js';
 
 const COS = Math.cos(Math.PI / 6), SIN = Math.sin(Math.PI / 6);

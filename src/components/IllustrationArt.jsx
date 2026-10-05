@@ -1,7 +1,7 @@
 import React from 'react';
 import { illustrationMarkup } from '../lib/illustration-markup.js';
 
-// Exported by scripts/export-illustrations.ts; motion targets live in motion/illustration-motion.js.
+// SVG sources live in art/illustrations; motion targets in motion/illustration-motion.js.
 const sources = import.meta.glob('../art/illustrations/*.svg', { query: '?raw', import: 'default', eager: true });
 const art = Object.fromEntries(Object.entries(sources).map(([path, source]) =>
   [path.match(/([\w-]+)\.svg$/)[1], illustrationMarkup(source)]));

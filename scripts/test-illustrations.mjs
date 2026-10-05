@@ -6,8 +6,6 @@ import { poses } from '../src/motion/illustration-motion.js';
 // be addressable so the page can shade it through CSS tokens.
 for (const [name, pose] of Object.entries(poses)) {
   const svg = readFileSync(`src/art/illustrations/${name}.svg`, 'utf8');
-  const scene = JSON.parse(readFileSync(`src/art/illustrations/${name}.scene.json`, 'utf8'));
-  assert.ok(scene.objects.length, `${name}: editable scene is empty`);
   assert.doesNotMatch(svg, /<image|<mask|NaN|undefined/);
   const ids = [...svg.matchAll(/data-object="([^"]+)"/g)].map(match => match[1]);
   assert.equal(new Set(ids).size, ids.length, `${name}: duplicate animation targets`);
@@ -23,4 +21,4 @@ for (const name of ['storage', 'production']) {
   for (const [, rest, open] of svg.matchAll(/ d="([^"]+)" data-open="([^"]+)"/g))
     assert.equal(rest.replace(/[-\d.]+/g, '#'), open.replace(/[-\d.]+/g, '#'), `${name}: morph changes path structure`);
 }
-console.log('Eight Illustration scenes: tagged faces, editable sources and animation targets OK');
+console.log('Eight illustrations: tagged faces and animation targets OK');
