@@ -7,10 +7,9 @@
 
 | Файл | Что внутри |
 | --- | --- |
-| `src/styles/ds-tokens.css` | **Источник правды.** Токены с именами переменных Figma: цвета (`--color-*`), отступы (`--space-*`), радиусы (`--radius-*`), кнопки (`--button-*`), типографика (`--type-*`). Здесь же тёмный режим. |
+| `src/styles/ds-tokens.css` | **Источник правды.** Токены с именами переменных Figma: цвета (`--color-*`), отступы (`--space-*`), радиусы (`--radius-*`), кнопки (`--button-*`), типографика (`--type-*`). Здесь же тёмный режим для тёмных полос. |
 | `src/styles/passwork-tokens.css` | Рабочие псевдонимы сайта `--pw-*` и ритм `--s-*`. Цвета ссылаются на `ds-tokens.css`. Здесь же токены движения `--pw-motion-*`. |
 | `src/styles/tokens.css`, `typography.css`, `rhythm.css`, `states.css` | Общие правила: шкала текста, вертикальный ритм, hover и фокус. |
-| `src/styles/theme-dark.css` | Тёмная тема (превью в dev, в продакшен не включена). |
 
 Правило имени: `группа/имя` в Figma → `--color-группа-имя` в CSS. Например,
 `text/primary` → `--color-text-primary`, `button/dark/bg-hover` → `--color-button-dark-bg-hover`.
@@ -18,7 +17,7 @@
 ## Цвет
 
 Коллекция Figma **Color** с режимами Light и Dark соответствует блоку `:root` и блоку
-`:is([data-theme="dark"], .theme-dark)` в `ds-tokens.css`.
+`.theme-dark` в `ds-tokens.css`.
 
 - `text/*` — текст: primary, secondary, tertiary (AA на белом и на фоне страницы), on-brand для синих сцен.
 - `surface/*` — поверхности: page `#FAFAFB`, default (белый), subtle, brand (синие сцены), inverse (тёмные полосы).
@@ -111,10 +110,3 @@
 - без теней и цветных ореолов;
 - движение физически правдоподобно: выезжает ящик, а не весь шкаф;
 - сцены не повторяют друг друга.
-
-## Тёмная тема
-
-Готова как превью. В `npm run dev` её включает переключатель в правом нижнем углу или
-параметр `?theme=dark`. Цвета задают режим Dark в `ds-tokens.css` и `theme-dark.css`.
-Чтобы включить тёмную тему в продакшене, понадобится переключатель в интерфейсе: сейчас
-он есть только в dev (`src/dev/ThemeToggle.jsx`).

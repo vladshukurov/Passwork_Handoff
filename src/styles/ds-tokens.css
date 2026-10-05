@@ -78,8 +78,7 @@
   --color-button-ghost-bg-hover: #ffffff20;
   --color-button-ghost-bg-pressed: #ffffff2e;
   --color-button-ghost-fg: #ffffff;
-  /* product: the app UI inside the scenes (same in both modes in Figma;
-     theme-dark.css swaps the scene palette) */
+  /* product: the app UI inside the scenes (same in both modes in Figma) */
   --color-product-text-primary: #363a40;
   --color-product-text-strong: #1c1d1f;
   --color-product-text-secondary: #747b85;
@@ -213,7 +212,7 @@
 
 /* Color · Dark. Opt-in scope for new blocks on the dark surface; the existing
    dark bands (Trust, Pricing, Footer) keep their own rules for now. */
-:is([data-theme="dark"], .theme-dark) {
+.theme-dark {
   /* Color · Dark — only the variables whose Dark value differs. */
   color-scheme: dark;
   /* button: the dark CTA inverts to white */

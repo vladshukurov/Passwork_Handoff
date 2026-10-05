@@ -1,6 +1,6 @@
 /* Product UI palette: the live dashboards, the tab views, the feature
    snippets and the security stage cards draw from these. Light values come
-   from the Figma "product/*" tokens; theme-dark.css swaps the set. */
+   from the Figma "product/*" tokens. */
 :is(.product-window, .team-dashboard-window, .pw-live-dashboard.pw-embed, .pw-team-dashboard.pw-embed, .feature-snippet, .security-visual) {
   --pw-bg: var(--color-product-surface-default);        /* #fff */
   --pw-side: var(--color-product-surface-page);         /* #fafafb */

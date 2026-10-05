@@ -24,13 +24,6 @@ import './styles/typography.css';
 import './styles/rhythm.css';
 import './styles/states.css';
 import './styles/social-proof.css';
-import './styles/theme-dark.css';
 import App from './App.jsx';
 
-const root = createRoot(document.getElementById('root'));
-if (import.meta.env.DEV) {
-  // Local-only theme preview; the whole branch is tree-shaken from builds.
-  const [{ default: ThemeToggle, applyStoredTheme }] = await Promise.all([import('./dev/ThemeToggle.jsx'), import('./dev/theme-toggle.css')]);
-  applyStoredTheme();
-  root.render(<><App /><ThemeToggle /></>);
-} else root.render(<App />);
+createRoot(document.getElementById('root')).render(<App />);
